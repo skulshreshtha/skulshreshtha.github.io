@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Strategy Consultant/Data Scientist @Mastercard Advisors/Ex-KPMG/Ex-i3C
+subtitle: Strategy Consultant / Data Scientist @Mastercard Advisors / Ex-KPMG / Ex-i3 Consulting / IIT Roorkee
 ---
 
 My name is Shobhit Kulshreshtha. I graduated with a Bachelors degree in Civil Engineering from one of India's most prestigious engineering colleges, Indian Institute of Technology - Roorkee in 2015. Since then, I have worked in Strategy Consulting across 3 different organizations and a wide variety of industries and clients. I have been on the front as well as in the back office.
