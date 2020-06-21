@@ -3285,4 +3285,4 @@ schools_map.save('schools.html')
 schools_map
 ```
 
-{% include /assets/img/schools.html %}
+![schools_map](/assets/img/schools.html)
