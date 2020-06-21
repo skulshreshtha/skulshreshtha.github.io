@@ -14,7 +14,7 @@ This project utilizes different datasets taken from the [NYC OpenData initiative
 2. The schools which are doing best and the ones which are doing worse, what are the key differentiating factors between these schools?
 3. Do demographics really play a role in SAT scores? If yes, then how and which demographic categories are doing better than others  
 
-### Step - 1: Data pull and cleaning
+## Data pull and cleaning
 
 For purpose of this analysis, we will be taking multiple open-source data sets available, perform some cleaning, and consolidate them into one dataset having one row per school, which would then allow us to do the rest of Exploratory Data Analysis pretty easily. As I would be using the NYC OpenData APIs to pull in the data, I have added the links to APIs for downloading the data directly into pandas dataframes. 
 
@@ -1628,6 +1628,9 @@ len(sat_results) - sat_results['dbn'].nunique()
 
 Okay, now that we are done cleaning the data sets, let's proceed to creating few fields which do not exist and might be important later followed by combining the datasets.  
 Also, I noticed that there are some entries in sat_results which do not have any score associated. Let's remove them from the analysis as there is no legit way to impute these values.  
+
+## Combining the datasets  
+
 
 ```python
 sat_results = sat_results[sat_results['sat_math_avg_score']!='s']
