@@ -920,10 +920,16 @@ pre {
 /* Shobhit's added custom CSS */
 
 .table-container {
-  height: 400px;
-  width: 500px;
+  height: 500px;
+  width: 700px;
   margin-top: 20px;
   margin-bottom: 20px;
   overflow: scroll;
 }
+
+.map-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 
