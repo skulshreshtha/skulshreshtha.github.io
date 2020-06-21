@@ -43,6 +43,7 @@ import pandas as pd
 import os
 import folium # For plotting chloropleth charts
 from folium import plugins
+import pygeoj # For reading in geoJSON District map file
 ```
 
 Now, let's read in all the different datasets that I described above:
@@ -134,26 +135,10 @@ sat_results.head()
 
 ```python
 enrollment.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -195,33 +180,14 @@ enrollment.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
+</div>  
 
 ```python
 high_schools.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -372,33 +338,14 @@ high_schools.head()
   </tbody>
 </table>
 <p>5 rows × 69 columns</p>
-</div>
-
-
-
+</div>  
 
 ```python
 class_size.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -518,33 +465,14 @@ class_size.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
+</div>  
 
 ```python
 ap2010.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -598,33 +526,14 @@ ap2010.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
+</div>  
 
 ```python
 graduation.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -775,33 +684,14 @@ graduation.head()
   </tbody>
 </table>
 <p>5 rows × 23 columns</p>
-</div>
-
-
-
+</div>  
 
 ```python
 demographics.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -952,30 +842,14 @@ demographics.head()
   </tbody>
 </table>
 <p>5 rows × 38 columns</p>
-</div>
+</div>  
 
 ```python
 math_results.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1095,33 +969,14 @@ math_results.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
+</div>  
 
 ```python
 survey_1.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1272,33 +1127,14 @@ survey_1.head()
   </tbody>
 </table>
 <p>5 rows × 1942 columns</p>
-</div>
-
-
-
+</div>  
 
 ```python
 survey_2.head()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1449,29 +1285,20 @@ survey_2.head()
   </tbody>
 </table>
 <p>5 rows × 1773 columns</p>
-</div>
-
-
+</div>  
 
 **Things we can start noticing from previews:**
-    1. DBN is one common field that is present in majority of the datasets. We can combine these datasets on DBN
-    2. All datasets do not have one unique row for each school
-    3. All schools listed in these datasets are not high-schools
-    4. We can choose the important fields from survey data and combine the two survey datasets into one
+1. DBN is one common field that is present in majority of the datasets. We can combine these datasets on DBN
+2. All datasets do not have one unique row for each school
+3. All schools listed in these datasets are not high-schools
+4. We can choose the important fields from survey data and combine the two survey datasets into one
 
 Okay, so having said that we need to create a DBN field in the class_size dataset. Looking at what DBN looks like, we can see it is a combination of district, borough, and school code. Fragments of dbn are already lying around in class_size, which we need to concatenate into one.
 
 ```python
 class_size["dbn"] = class_size.apply(lambda x: "{0:02d}{1}".format(x["csd"], x["school_code"]), axis=1)
-```
-
-
-```python
 class_size['dbn'].head(10)
 ```
-
-
-
 
     0    01M015
     1    01M015
@@ -1483,66 +1310,37 @@ class_size['dbn'].head(10)
     7    01M015
     8    01M015
     9    01M015
-    Name: dbn, dtype: object
-
-
+    Name: dbn, dtype: object  
 
 **Perfect! This looks like a dbn code now.**
 
-Let's now combine the two survey datasets and only keep the fields seeming important
-
+Let's now combine the two survey datasets and only keep the fields seeming important  
 
 ```python
 survey = pd.concat([survey_1,survey_2],axis=0)
-```
-
-```python
 survey_fields = ["dbn", "rr_s", "rr_t", "rr_p", "N_s", "N_t", "N_p", "saf_p_11", "com_p_11", "eng_p_11", "aca_p_11", "saf_t_11", "com_t_11", "eng_t_10", "aca_t_11", "saf_s_11", "com_s_11", "eng_s_11", "aca_s_11", "saf_tot_11", "com_tot_11", "eng_tot_11", "aca_tot_11"]
 survey = survey.loc[:,survey_fields]
-```
+```  
 
-Before joining the datasets, let's reduce datasets to 1 row per school dbn. Starting with class_size
-
+Before joining the datasets, let's reduce datasets to 1 row per school dbn. Starting with class_size  
 
 ```python
 #Only the grade 9-12 is relevant to our analysis 
 class_size['grade_'].unique()
-```
+```  
 
-
-
-
-    array(['0K', '01', '02', '03', '04', '05', '0K-09', nan, '06', '07', '08',
-           'MS Core', '09-12'], dtype=object)
-
-
-
+array(['0K', '01', '02', '03', '04', '05', '0K-09', nan, '06', '07', '08',
+           'MS Core', '09-12'], dtype=object)  
 
 ```python
 #Majority of the grade 9-12 programs are general education
 #Here CTT stands for Collabortive Team Teaching where both Gened and Special Ed teachers teach together in the class
 #For now, let's keep only the gened program
 class_size[class_size['grade_']=='09-12'].groupby('program_type').count()
-```
+```  
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class="table-container">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1643,10 +1441,7 @@ class_size[class_size['grade_']=='09-12'].groupby('program_type').count()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
+</div>  
 
 ```python
 class_size = class_size[class_size["grade_"] == "09-12"]
@@ -1654,37 +1449,24 @@ class_size = class_size[class_size["program_type"] == "GEN ED"]
 class_size = class_size.groupby("dbn").agg(np.mean)
 class_size.reset_index(inplace=True)
 class_size.rename(columns = {'grade_':'grade'}, inplace = True)
-```
+```  
 
-Moving on to demographics
-
+Moving on to demographics  
 
 ```python
 #Let's keep only the latest year
 demographics['schoolyear'].unique()
-```
-
-
-
+```  
 
     array([20052006, 20062007, 20072008, 20082009, 20092010, 20102011,
-           20112012], dtype=int64)
-
-
-
+           20112012], dtype=int64)  
 
 ```python
 demographics = demographics[demographics['schoolyear']==20112012]
-```
 
-
-```python
 #Ensuring there are no duplicate dbn rows
 len(demographics)-demographics['dbn'].nunique()
 ```
-
-
-
 
     0
 
@@ -1721,10 +1503,7 @@ math_results['year'].unique()
 
 ```python
 math_results = math_results[(math_results['grade']=='8') & (math_results['year']==2011)]
-```
 
-
-```python
 #Ensuring there are no duplicate dbn rows
 len(math_results)-math_results['dbn'].nunique()
 ```
@@ -1768,10 +1547,7 @@ graduation['demographic'].unique()
 
 ```python
 graduation = graduation[(graduation['cohort']=='2006') & (graduation['demographic']=='Total Cohort')]
-```
 
-
-```python
 len(graduation) - graduation['dbn'].nunique()
 ```
 
@@ -1812,11 +1588,8 @@ len(ap2010) - ap2010['dbn'].nunique()
 ```python
 ap2010 = ap2010.groupby('dbn').agg(np.mean)
 ap2010.reset_index(inplace=True)
-```
 
-
-```python
-#Checking it is fixed now
+#Checking if it is fixed now
 len(ap2010) - ap2010['dbn'].nunique()
 ```
 
@@ -1853,38 +1626,24 @@ len(sat_results) - sat_results['dbn'].nunique()
 
 
 
-**Now that we are done cleaning the data sets. Let's proceed to creating few fields which do not exist and combine the datasets.** 
-
-#### There are some entries in sat_results which do not have any score associated. Let's remove them from the analysis as there is no legit way to impute these values
-
+Okay, now that we are done cleaning the data sets, let's proceed to creating few fields which do not exist and might be important later followed by combining the datasets.  
+Also, I noticed that there are some entries in sat_results which do not have any score associated. Let's remove them from the analysis as there is no legit way to impute these values.  
 
 ```python
 sat_results = sat_results[sat_results['sat_math_avg_score']!='s']
-```
 
-
-```python
 #Converting sat scores to numeric valu
 cols = ['sat_math_avg_score', 'sat_critical_reading_avg_score', 'sat_writing_avg_score']
 for c in cols:
     sat_results[c] = sat_results[c].apply(lambda x: int(x))
-```
 
-
-```python
 # Adding in total average SAT score as a new field
 sat_results['sat_score'] = sat_results['sat_critical_reading_avg_score']+sat_results['sat_math_avg_score']+sat_results['sat_writing_avg_score']
-```
 
-
-```python
 # Extracting latitude and longitude out of the location information provided in high school data
 high_schools['Latitude'] = high_schools['location_1'].apply(lambda x: x.get('latitude'))
 high_schools['Longitude'] = high_schools['location_1'].apply(lambda x: x.get('longitude'))
-```
 
-
-```python
 # Checking the number of unique DBNs in each database
 data_list = {'sat_results':sat_results,
              'enrollment':enrollment,
@@ -1969,37 +1728,19 @@ Then we can left join other datasets to it.
 
 ```python
 full = pd.merge(sat_results,high_schools,on='dbn',how='outer')
-```
 
-
-```python
 full = pd.merge(full,ap2010,on='dbn',how='outer')
-```
 
-
-```python
 full = pd.merge(full,graduation,on='dbn',how='outer')
-```
 
-
-```python
 for k,v in data_list.items():
     if k not in ['sat_results','high_schools','ap2010','graduation','enrollment','districts']:
         full = pd.merge(full,v,on='dbn',how='left')
-```
 
-
-```python
 np.set_printoptions(threshold=200)
-```
 
-
-```python
 cols = full.columns.tolist()
-```
 
-
-```python
 full[['ap_test_takers_','number_of_exams_with_scores_3_4_or_5','total_exams_taken']]
 ```
 
@@ -2197,935 +1938,12 @@ full[['ap_test_takers_','number_of_exams_with_scores_3_4_or_5','total_exams_take
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-full.describe()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sat_critical_reading_avg_score</th>
-      <th>sat_math_avg_score</th>
-      <th>sat_writing_avg_score</th>
-      <th>sat_score</th>
-      <th>:@computed_region_92fq_4b7q</th>
-      <th>:@computed_region_efsh_h5xi</th>
-      <th>:@computed_region_f5dn_yrer</th>
-      <th>:@computed_region_sbqj_enih</th>
-      <th>:@computed_region_yeji_bk3q</th>
-      <th>bbl</th>
-      <th>bin</th>
-      <th>census_tract</th>
-      <th>community_board</th>
-      <th>council_district</th>
-      <th>expgrade_span_max</th>
-      <th>expgrade_span_min</th>
-      <th>grade_span_max</th>
-      <th>grade_span_min</th>
-      <th>number_programs</th>
-      <th>total_students</th>
-      <th>zip</th>
-      <th>ap_test_takers_</th>
-      <th>number_of_exams_with_scores_3_4_or_5</th>
-      <th>total_exams_taken</th>
-      <th>advanced_regents_of_cohort</th>
-      <th>advanced_regents_of_grads</th>
-      <th>dropped_out_of_cohort</th>
-      <th>local_of_cohort</th>
-      <th>local_of_grads</th>
-      <th>regents_w_o_advanced_of_cohort</th>
-      <th>regents_w_o_advanced_of_grads</th>
-      <th>still_enrolled_of_cohort</th>
-      <th>total_cohort</th>
-      <th>total_grads_of_cohort</th>
-      <th>total_regents_of_cohort</th>
-      <th>total_regents_of_grads</th>
-      <th>average_class_size</th>
-      <th>csd</th>
-      <th>number_of_sections</th>
-      <th>number_of_students_seats_filled</th>
-      <th>schoolwide_pupil_teacher_ratio</th>
-      <th>size_of_largest_class</th>
-      <th>size_of_smallest_class</th>
-      <th>asian_num</th>
-      <th>asian_per</th>
-      <th>black_num</th>
-      <th>black_per</th>
-      <th>ell_percent</th>
-      <th>female_num</th>
-      <th>female_per</th>
-      <th>frl_percent</th>
-      <th>hispanic_num</th>
-      <th>hispanic_per</th>
-      <th>male_num</th>
-      <th>male_per</th>
-      <th>schoolyear</th>
-      <th>sped_num</th>
-      <th>sped_percent</th>
-      <th>total_enrollment</th>
-      <th>white_num</th>
-      <th>white_per</th>
-      <th>level_1_1</th>
-      <th>level_1_2</th>
-      <th>level_2_1</th>
-      <th>level_2_2</th>
-      <th>level_3_1</th>
-      <th>level_3_2</th>
-      <th>level_3_4_1</th>
-      <th>level_3_4_2</th>
-      <th>level_4_1</th>
-      <th>level_4_2</th>
-      <th>mean_scale_score</th>
-      <th>number_tested</th>
-      <th>year</th>
-      <th>rr_s</th>
-      <th>rr_t</th>
-      <th>rr_p</th>
-      <th>N_s</th>
-      <th>N_t</th>
-      <th>N_p</th>
-      <th>saf_p_11</th>
-      <th>com_p_11</th>
-      <th>eng_p_11</th>
-      <th>aca_p_11</th>
-      <th>saf_t_11</th>
-      <th>com_t_11</th>
-      <th>eng_t_10</th>
-      <th>aca_t_11</th>
-      <th>saf_s_11</th>
-      <th>com_s_11</th>
-      <th>eng_s_11</th>
-      <th>aca_s_11</th>
-      <th>saf_tot_11</th>
-      <th>com_tot_11</th>
-      <th>eng_tot_11</th>
-      <th>aca_tot_11</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>421.000000</td>
-      <td>421.000000</td>
-      <td>421.000000</td>
-      <td>421.000000</td>
-      <td>435.000000</td>
-      <td>434.000000</td>
-      <td>435.000000</td>
-      <td>435.000000</td>
-      <td>435.000000</td>
-      <td>4.310000e+02</td>
-      <td>4.310000e+02</td>
-      <td>432.000000</td>
-      <td>432.000000</td>
-      <td>432.000000</td>
-      <td>33.000000</td>
-      <td>31.000000</td>
-      <td>435.000000</td>
-      <td>432.000000</td>
-      <td>435.000000</td>
-      <td>426.000000</td>
-      <td>435.000000</td>
-      <td>233.000000</td>
-      <td>151.000000</td>
-      <td>233.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>154.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>147.000000</td>
-      <td>10.000000</td>
-      <td>10.000000</td>
-      <td>10.000000</td>
-      <td>10.000000</td>
-      <td>0.0</td>
-      <td>10.000000</td>
-      <td>10.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.0</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>77.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>3.0</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>462.000000</td>
-      <td>466.000000</td>
-      <td>466.00000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>0.0</td>
-      <td>466.000000</td>
-      <td>462.000000</td>
-      <td>462.000000</td>
-      <td>462.000000</td>
-      <td>462.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-      <td>466.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>400.850356</td>
-      <td>413.368171</td>
-      <td>393.985748</td>
-      <td>1208.204276</td>
-      <td>28.832184</td>
-      <td>14232.228111</td>
-      <td>38.372414</td>
-      <td>36.949425</td>
-      <td>3.452874</td>
-      <td>2.510921e+09</td>
-      <td>2.581724e+06</td>
-      <td>3988.340278</td>
-      <td>6.787037</td>
-      <td>21.856481</td>
-      <td>12.363636</td>
-      <td>8.516129</td>
-      <td>11.894253</td>
-      <td>8.442130</td>
-      <td>1.708046</td>
-      <td>703.842723</td>
-      <td>10726.096552</td>
-      <td>118.879828</td>
-      <td>143.615894</td>
-      <td>180.532189</td>
-      <td>10.892517</td>
-      <td>13.720408</td>
-      <td>10.261224</td>
-      <td>13.964626</td>
-      <td>25.677551</td>
-      <td>38.980272</td>
-      <td>60.600680</td>
-      <td>22.377551</td>
-      <td>141.480519</td>
-      <td>63.834014</td>
-      <td>49.873469</td>
-      <td>74.322449</td>
-      <td>21.978294</td>
-      <td>1.100000</td>
-      <td>4.219450</td>
-      <td>94.212627</td>
-      <td>NaN</td>
-      <td>25.314741</td>
-      <td>18.493347</td>
-      <td>102.870130</td>
-      <td>14.372727</td>
-      <td>134.051948</td>
-      <td>25.749351</td>
-      <td>14.679221</td>
-      <td>303.987013</td>
-      <td>53.032468</td>
-      <td>63.042857</td>
-      <td>247.311688</td>
-      <td>47.036364</td>
-      <td>258.857143</td>
-      <td>46.967532</td>
-      <td>20112012.0</td>
-      <td>67.142857</td>
-      <td>13.380519</td>
-      <td>562.844156</td>
-      <td>72.181818</td>
-      <td>11.576623</td>
-      <td>5.666667</td>
-      <td>11.400000</td>
-      <td>16.666667</td>
-      <td>31.766667</td>
-      <td>18.666667</td>
-      <td>26.300000</td>
-      <td>59.666667</td>
-      <td>56.800000</td>
-      <td>41.000000</td>
-      <td>30.500000</td>
-      <td>682.333333</td>
-      <td>82.000000</td>
-      <td>2011.0</td>
-      <td>78.637339</td>
-      <td>82.854077</td>
-      <td>37.718884</td>
-      <td>521.766234</td>
-      <td>35.912017</td>
-      <td>215.54721</td>
-      <td>8.210730</td>
-      <td>7.657082</td>
-      <td>7.545708</td>
-      <td>7.848712</td>
-      <td>7.166738</td>
-      <td>6.545494</td>
-      <td>NaN</td>
-      <td>7.534120</td>
-      <td>6.698485</td>
-      <td>6.161255</td>
-      <td>6.697186</td>
-      <td>7.420563</td>
-      <td>7.355579</td>
-      <td>6.784120</td>
-      <td>7.087554</td>
-      <td>7.601717</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>56.802783</td>
-      <td>64.684655</td>
-      <td>58.635109</td>
-      <td>174.536123</td>
-      <td>14.209488</td>
-      <td>3529.272774</td>
-      <td>19.345374</td>
-      <td>21.107520</td>
-      <td>1.212249</td>
-      <td>1.136455e+09</td>
-      <td>1.189750e+06</td>
-      <td>15582.415491</td>
-      <td>4.367781</td>
-      <td>14.321718</td>
-      <td>0.783349</td>
-      <td>1.121635</td>
-      <td>0.421583</td>
-      <td>1.164591</td>
-      <td>1.564233</td>
-      <td>775.870436</td>
-      <td>537.927907</td>
-      <td>221.714680</td>
-      <td>373.153407</td>
-      <td>390.482085</td>
-      <td>18.809995</td>
-      <td>20.401413</td>
-      <td>7.375343</td>
-      <td>10.885436</td>
-      <td>20.669807</td>
-      <td>18.765469</td>
-      <td>21.497118</td>
-      <td>15.739418</td>
-      <td>147.702989</td>
-      <td>20.403057</td>
-      <td>24.180810</td>
-      <td>20.669807</td>
-      <td>2.444940</td>
-      <td>0.316228</td>
-      <td>2.652025</td>
-      <td>59.142968</td>
-      <td>NaN</td>
-      <td>3.844544</td>
-      <td>2.155014</td>
-      <td>281.673353</td>
-      <td>18.974405</td>
-      <td>133.705086</td>
-      <td>12.155025</td>
-      <td>23.955448</td>
-      <td>284.349049</td>
-      <td>13.248917</td>
-      <td>19.888468</td>
-      <td>221.455429</td>
-      <td>18.881946</td>
-      <td>266.700685</td>
-      <td>13.248917</td>
-      <td>0.0</td>
-      <td>59.658174</td>
-      <td>8.219778</td>
-      <td>508.919730</td>
-      <td>135.710773</td>
-      <td>14.941939</td>
-      <td>8.144528</td>
-      <td>16.724832</td>
-      <td>13.576941</td>
-      <td>27.157749</td>
-      <td>10.408330</td>
-      <td>19.754493</td>
-      <td>71.143048</td>
-      <td>40.605541</td>
-      <td>67.549981</td>
-      <td>46.159831</td>
-      <td>37.872593</td>
-      <td>52.048055</td>
-      <td>0.0</td>
-      <td>16.752320</td>
-      <td>17.309832</td>
-      <td>20.409052</td>
-      <td>619.422243</td>
-      <td>35.912360</td>
-      <td>261.22329</td>
-      <td>0.645791</td>
-      <td>0.566448</td>
-      <td>0.500744</td>
-      <td>0.561343</td>
-      <td>0.942149</td>
-      <td>1.209475</td>
-      <td>NaN</td>
-      <td>0.996734</td>
-      <td>0.786807</td>
-      <td>0.608109</td>
-      <td>0.641051</td>
-      <td>0.532572</td>
-      <td>0.687727</td>
-      <td>0.612842</td>
-      <td>0.606183</td>
-      <td>0.574772</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>279.000000</td>
-      <td>312.000000</td>
-      <td>286.000000</td>
-      <td>887.000000</td>
-      <td>1.000000</td>
-      <td>10090.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000160e+09</td>
-      <td>1.000811e+06</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>12.000000</td>
-      <td>6.000000</td>
-      <td>9.000000</td>
-      <td>6.000000</td>
-      <td>1.000000</td>
-      <td>50.000000</td>
-      <td>10001.000000</td>
-      <td>6.000000</td>
-      <td>6.000000</td>
-      <td>6.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>10.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>16.072727</td>
-      <td>1.000000</td>
-      <td>1.200000</td>
-      <td>26.818182</td>
-      <td>NaN</td>
-      <td>17.090909</td>
-      <td>15.090909</td>
-      <td>1.000000</td>
-      <td>0.200000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>33.000000</td>
-      <td>25.100000</td>
-      <td>15.800000</td>
-      <td>14.000000</td>
-      <td>2.400000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>20112012.0</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>68.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.700000</td>
-      <td>7.000000</td>
-      <td>14.300000</td>
-      <td>9.000000</td>
-      <td>18.400000</td>
-      <td>2.000000</td>
-      <td>3.600000</td>
-      <td>650.000000</td>
-      <td>49.000000</td>
-      <td>2011.0</td>
-      <td>0.000000</td>
-      <td>14.000000</td>
-      <td>2.000000</td>
-      <td>39.000000</td>
-      <td>2.000000</td>
-      <td>4.00000</td>
-      <td>5.700000</td>
-      <td>5.800000</td>
-      <td>5.700000</td>
-      <td>6.200000</td>
-      <td>3.900000</td>
-      <td>1.900000</td>
-      <td>NaN</td>
-      <td>3.600000</td>
-      <td>4.900000</td>
-      <td>5.000000</td>
-      <td>5.400000</td>
-      <td>6.100000</td>
-      <td>4.900000</td>
-      <td>4.500000</td>
-      <td>5.000000</td>
-      <td>5.600000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>368.000000</td>
-      <td>371.000000</td>
-      <td>360.000000</td>
-      <td>1102.000000</td>
-      <td>17.000000</td>
-      <td>11606.000000</td>
-      <td>22.000000</td>
-      <td>23.000000</td>
-      <td>2.000000</td>
-      <td>2.023060e+09</td>
-      <td>2.000992e+06</td>
-      <td>118.000000</td>
-      <td>3.000000</td>
-      <td>10.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>1.000000</td>
-      <td>349.000000</td>
-      <td>10301.500000</td>
-      <td>24.000000</td>
-      <td>14.000000</td>
-      <td>30.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>4.000000</td>
-      <td>5.900000</td>
-      <td>10.950000</td>
-      <td>25.950000</td>
-      <td>49.500000</td>
-      <td>12.800000</td>
-      <td>74.000000</td>
-      <td>49.800000</td>
-      <td>31.900000</td>
-      <td>61.900000</td>
-      <td>21.345312</td>
-      <td>1.000000</td>
-      <td>2.784375</td>
-      <td>59.231250</td>
-      <td>NaN</td>
-      <td>23.612500</td>
-      <td>17.437500</td>
-      <td>13.000000</td>
-      <td>3.800000</td>
-      <td>53.000000</td>
-      <td>15.600000</td>
-      <td>2.100000</td>
-      <td>136.000000</td>
-      <td>45.500000</td>
-      <td>54.600000</td>
-      <td>111.000000</td>
-      <td>38.800000</td>
-      <td>130.000000</td>
-      <td>40.800000</td>
-      <td>20112012.0</td>
-      <td>19.000000</td>
-      <td>6.900000</td>
-      <td>256.000000</td>
-      <td>9.000000</td>
-      <td>2.400000</td>
-      <td>1.000000</td>
-      <td>1.800000</td>
-      <td>12.500000</td>
-      <td>22.150000</td>
-      <td>14.500000</td>
-      <td>14.900000</td>
-      <td>19.000000</td>
-      <td>35.550000</td>
-      <td>2.000000</td>
-      <td>3.850000</td>
-      <td>661.500000</td>
-      <td>52.000000</td>
-      <td>2011.0</td>
-      <td>71.000000</td>
-      <td>73.250000</td>
-      <td>22.000000</td>
-      <td>228.000000</td>
-      <td>18.000000</td>
-      <td>78.25000</td>
-      <td>7.800000</td>
-      <td>7.300000</td>
-      <td>7.200000</td>
-      <td>7.400000</td>
-      <td>6.500000</td>
-      <td>5.700000</td>
-      <td>NaN</td>
-      <td>6.900000</td>
-      <td>6.100000</td>
-      <td>5.700000</td>
-      <td>6.200000</td>
-      <td>7.000000</td>
-      <td>6.900000</td>
-      <td>6.400000</td>
-      <td>6.700000</td>
-      <td>7.200000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>391.000000</td>
-      <td>395.000000</td>
-      <td>381.000000</td>
-      <td>1169.000000</td>
-      <td>32.000000</td>
-      <td>13093.000000</td>
-      <td>39.000000</td>
-      <td>34.000000</td>
-      <td>4.000000</td>
-      <td>2.053680e+09</td>
-      <td>2.116159e+06</td>
-      <td>251.500000</td>
-      <td>6.000000</td>
-      <td>18.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>1.000000</td>
-      <td>460.500000</td>
-      <td>10472.000000</td>
-      <td>46.000000</td>
-      <td>37.000000</td>
-      <td>65.000000</td>
-      <td>3.300000</td>
-      <td>5.200000</td>
-      <td>9.300000</td>
-      <td>13.500000</td>
-      <td>22.900000</td>
-      <td>40.200000</td>
-      <td>62.500000</td>
-      <td>18.500000</td>
-      <td>96.000000</td>
-      <td>64.900000</td>
-      <td>49.600000</td>
-      <td>77.100000</td>
-      <td>22.397768</td>
-      <td>1.000000</td>
-      <td>3.500000</td>
-      <td>78.821429</td>
-      <td>NaN</td>
-      <td>25.660714</td>
-      <td>18.593750</td>
-      <td>29.000000</td>
-      <td>6.300000</td>
-      <td>98.000000</td>
-      <td>27.700000</td>
-      <td>6.100000</td>
-      <td>222.000000</td>
-      <td>52.000000</td>
-      <td>68.300000</td>
-      <td>181.000000</td>
-      <td>49.700000</td>
-      <td>190.000000</td>
-      <td>48.000000</td>
-      <td>20112012.0</td>
-      <td>57.000000</td>
-      <td>14.100000</td>
-      <td>429.000000</td>
-      <td>20.000000</td>
-      <td>4.800000</td>
-      <td>2.000000</td>
-      <td>3.600000</td>
-      <td>24.000000</td>
-      <td>43.600000</td>
-      <td>22.000000</td>
-      <td>15.500000</td>
-      <td>29.000000</td>
-      <td>52.700000</td>
-      <td>2.000000</td>
-      <td>4.100000</td>
-      <td>673.000000</td>
-      <td>55.000000</td>
-      <td>2011.0</td>
-      <td>83.000000</td>
-      <td>88.000000</td>
-      <td>34.500000</td>
-      <td>337.500000</td>
-      <td>25.000000</td>
-      <td>154.50000</td>
-      <td>8.300000</td>
-      <td>7.700000</td>
-      <td>7.500000</td>
-      <td>7.800000</td>
-      <td>7.200000</td>
-      <td>6.600000</td>
-      <td>NaN</td>
-      <td>7.550000</td>
-      <td>6.600000</td>
-      <td>6.000000</td>
-      <td>6.600000</td>
-      <td>7.400000</td>
-      <td>7.300000</td>
-      <td>6.700000</td>
-      <td>7.000000</td>
-      <td>7.600000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>416.000000</td>
-      <td>437.000000</td>
-      <td>411.000000</td>
-      <td>1257.000000</td>
-      <td>40.000000</td>
-      <td>16865.750000</td>
-      <td>53.500000</td>
-      <td>54.000000</td>
-      <td>5.000000</td>
-      <td>3.068830e+09</td>
-      <td>3.330710e+06</td>
-      <td>510.250000</td>
-      <td>10.000000</td>
-      <td>34.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>2.000000</td>
-      <td>622.000000</td>
-      <td>11217.000000</td>
-      <td>114.000000</td>
-      <td>106.000000</td>
-      <td>149.000000</td>
-      <td>11.500000</td>
-      <td>16.950000</td>
-      <td>16.100000</td>
-      <td>18.450000</td>
-      <td>38.100000</td>
-      <td>51.650000</td>
-      <td>72.500000</td>
-      <td>30.050000</td>
-      <td>136.750000</td>
-      <td>77.700000</td>
-      <td>64.500000</td>
-      <td>89.050000</td>
-      <td>22.969118</td>
-      <td>1.000000</td>
-      <td>5.334559</td>
-      <td>124.760110</td>
-      <td>NaN</td>
-      <td>27.283482</td>
-      <td>19.455263</td>
-      <td>102.000000</td>
-      <td>16.000000</td>
-      <td>164.000000</td>
-      <td>34.400000</td>
-      <td>10.900000</td>
-      <td>354.000000</td>
-      <td>59.200000</td>
-      <td>75.500000</td>
-      <td>277.000000</td>
-      <td>59.200000</td>
-      <td>278.000000</td>
-      <td>54.500000</td>
-      <td>20112012.0</td>
-      <td>86.000000</td>
-      <td>18.800000</td>
-      <td>605.000000</td>
-      <td>67.000000</td>
-      <td>12.600000</td>
-      <td>8.500000</td>
-      <td>17.100000</td>
-      <td>24.500000</td>
-      <td>47.300000</td>
-      <td>24.500000</td>
-      <td>32.300000</td>
-      <td>85.000000</td>
-      <td>76.000000</td>
-      <td>60.500000</td>
-      <td>43.950000</td>
-      <td>698.500000</td>
-      <td>98.500000</td>
-      <td>2011.0</td>
-      <td>91.000000</td>
-      <td>96.000000</td>
-      <td>49.000000</td>
-      <td>481.750000</td>
-      <td>35.000000</td>
-      <td>254.75000</td>
-      <td>8.600000</td>
-      <td>8.000000</td>
-      <td>7.875000</td>
-      <td>8.200000</td>
-      <td>7.800000</td>
-      <td>7.400000</td>
-      <td>NaN</td>
-      <td>8.300000</td>
-      <td>7.200000</td>
-      <td>6.500000</td>
-      <td>7.100000</td>
-      <td>7.700000</td>
-      <td>7.800000</td>
-      <td>7.200000</td>
-      <td>7.500000</td>
-      <td>8.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>679.000000</td>
-      <td>735.000000</td>
-      <td>682.000000</td>
-      <td>2096.000000</td>
-      <td>51.000000</td>
-      <td>24669.000000</td>
-      <td>71.000000</td>
-      <td>77.000000</td>
-      <td>5.000000</td>
-      <td>5.066130e+09</td>
-      <td>5.149609e+06</td>
-      <td>138501.000000</td>
-      <td>18.000000</td>
-      <td>51.000000</td>
-      <td>14.000000</td>
-      <td>9.000000</td>
-      <td>12.000000</td>
-      <td>9.000000</td>
-      <td>10.000000</td>
-      <td>5458.000000</td>
-      <td>11694.000000</td>
-      <td>2117.000000</td>
-      <td>2687.000000</td>
-      <td>3692.000000</td>
-      <td>97.800000</td>
-      <td>99.500000</td>
-      <td>26.600000</td>
-      <td>76.400000</td>
-      <td>100.000000</td>
-      <td>96.400000</td>
-      <td>100.000000</td>
-      <td>74.000000</td>
-      <td>1092.000000</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>25.510526</td>
-      <td>2.000000</td>
-      <td>10.250000</td>
-      <td>214.166667</td>
-      <td>NaN</td>
-      <td>31.210526</td>
-      <td>22.600000</td>
-      <td>2377.000000</td>
-      <td>89.500000</td>
-      <td>828.000000</td>
-      <td>47.900000</td>
-      <td>94.900000</td>
-      <td>1483.000000</td>
-      <td>100.000000</td>
-      <td>97.500000</td>
-      <td>965.000000</td>
-      <td>99.800000</td>
-      <td>1956.000000</td>
-      <td>74.900000</td>
-      <td>20112012.0</td>
-      <td>292.000000</td>
-      <td>32.900000</td>
-      <td>3297.000000</td>
-      <td>780.000000</td>
-      <td>63.700000</td>
-      <td>15.000000</td>
-      <td>30.600000</td>
-      <td>25.000000</td>
-      <td>51.000000</td>
-      <td>27.000000</td>
-      <td>49.100000</td>
-      <td>141.000000</td>
-      <td>99.300000</td>
-      <td>119.000000</td>
-      <td>83.800000</td>
-      <td>724.000000</td>
-      <td>142.000000</td>
-      <td>2011.0</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>94.000000</td>
-      <td>4768.000000</td>
-      <td>244.000000</td>
-      <td>2804.00000</td>
-      <td>10.000000</td>
-      <td>9.600000</td>
-      <td>9.700000</td>
-      <td>10.000000</td>
-      <td>9.600000</td>
-      <td>9.000000</td>
-      <td>NaN</td>
-      <td>9.800000</td>
-      <td>9.200000</td>
-      <td>9.300000</td>
-      <td>9.500000</td>
-      <td>9.500000</td>
-      <td>9.500000</td>
-      <td>8.700000</td>
-      <td>9.200000</td>
-      <td>9.600000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
 # Adding a field for school districs
 full["school_dist"] = full["dbn"].apply(lambda x: x[:2])
 full.fillna(full.mean(),inplace=True)
 ```
 
-**It would be beneficial to understand the correlation between sat_score and other columns to understand what fields influence sat_score the most**
+It would be beneficial to understand the correlation between sat_score and other columns to understand what fields influence sat_score the most
 
 
 ```python
@@ -3240,12 +2058,12 @@ full.corr()['sat_score'].sort_values(ascending=False)
 
 Let's take a moment here to note down anything interesting we can find from the above. We can use that later to create an
 analysis viewpoint.
- * Total number of students correlated with Sat Scores. Interesting, that would mean than large schools
-    perform better than small schools
- * Number of parents, teachers, and students responding to the survey also highly correlates with sat scores
- * FRL (Free or Reduced Lunches) and ELL (English Language Learners) percent correlate strongly negatively with sat score
- * Female_num correlates positively whereas male_num correlates negatively with Sat scores
- * Racial inequality in sat scores can be identified easily from above (white_per, hispanic_per, black_per, asian_per)
+* Total number of students correlated with Sat Scores. Interesting, that would mean than large schools
+perform better than small schools
+* Number of parents, teachers, and students responding to the survey also highly correlates with sat scores
+* FRL (Free or Reduced Lunches) and ELL (English Language Learners) percent correlate strongly negatively with sat score
+* Female_num correlates positively whereas male_num correlates negatively with Sat scores
+* Racial inequality in sat scores can be identified easily from above (white_per, hispanic_per, black_per, asian_per)
 
 ## Plotting stage
 
@@ -3257,10 +2075,7 @@ for a better understanding of the problem at hand
 # Converting Latitude and Longitude to float values
 full['Latitude'] = pd.to_numeric(full['Latitude'],errors='coerce')
 full['Longitude'] = pd.to_numeric(full['Longitude'],errors='coerce')
-```
 
-
-```python
 schools_map = folium.Map(location=[full['Latitude'].mean(), full['Longitude'].mean()], zoom_start=10)
 marker_cluster = plugins.MarkerCluster().add_to(schools_map)
 for name, row in full.loc[~full['Latitude'].isnull()].iterrows():
@@ -3270,6 +2085,512 @@ schools_map
 ```
 
 <div class="map-container">
-    <iframe src="/assets/img/schools.html" height="600" width="800" frameborder="0">
+    <iframe src="/assets/img/schools.html" height="400" width="500" frameborder="0">
     </iframe>
+</div>  
+
+Let's try plotting a heatmap to better visualize school density across NY
+
+```python
+schools_heatmap = folium.Map(location=[full['Latitude'].mean(), full['Longitude'].mean()], zoom_start=10)
+schools_heatmap.add_children(plugins.HeatMap([[row["Latitude"], row["Longitude"]] for name, row in full.loc[~full['Latitude'].isnull()].iterrows()]))
+schools_heatmap.save("heatmap.html")
+schools_heatmap
+```
+
+<div class="map-container">
+    <iframe src="/assets/img/heatmap.html" height="400" width="500" frameborder="0">
+    </iframe>
+</div>  
+
+Interesting, Let's try assessing further if there is any difference in SAT scores between the school districs  
+
+```python
+# Aggregating data at district level
+district_data = full.groupby("school_dist").agg(np.mean)
+district_data.reset_index(inplace=True)
+district_data['school_dist'] = district_data['school_dist'].apply(lambda x: str(int(x)))
+districts_geojson = pygeoj.load(filepath='districts.geojson')
+
+# Defining a function to overlay heatmap distribution of a metric over the district maps
+def show_district_map(col,dist):
+    districts = folium.Map(location=[full['Latitude'].mean(), full['Longitude'].mean()], zoom_start=10)
+    districts.choropleth(
+    geo_data=dist,
+    data=district_data,
+    columns=['school_dist', col],
+    key_on='feature.properties.school_dist',
+    fill_color='YlGn',
+    fill_opacity=0.7,
+    line_opacity=0.2,
+    )
+    return districts
+
+show_district_map("sat_score",districts_geojson).save("districts_sat.html")
+show_district_map("sat_score",districts_geojson)
+```  
+
+<div class="map-container">
+    <iframe src="/assets/img/districts_sat.html" height="400" width="500" frameborder="0">
+    </iframe>
+</div>  
+
+This looks great! Now that we have developed a basic understanding of the dataset and SAT score variation across districts. Let's look further into the analysis angles that we had proposed earlier.
+
+```python
+%matplotlib inline
+full.plot.scatter(x='total_enrollment', y='sat_score')
+```  
+
+![SAT Score vs Total Enrollment](/assets/img/output_80_1.png)  
+
+Hmm, There is not exactly a correlation here. Its just that there is a cluster of schools with low enrollment and low sat scores. Let's try pulling up some names.  
+
+```python
+full.loc[(full['total_enrollment']<500)&(full['sat_score']<=1200),['name','sat_score']]
+```  
+
+<div class="table-container">
+<table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sat_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES</td>
+      <td>1122.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>UNIVERSITY NEIGHBORHOOD HIGH SCHOOL</td>
+      <td>1172.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SATELLITE ACADEMY HS @ FORSYTHE STREET</td>
+      <td>1174.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>47 THE AMERICAN SIGN LANGUAGE AND ENGLISH DUAL L</td>
+      <td>1182.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>FOOD AND FINANCE HIGH SCHOOL</td>
+      <td>1194.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>HIGH SCHOOL FOR HISTORY &amp; COMMUNICATION</td>
+      <td>1156.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>HIGH SCHOOL OF HOSPITALITY MANAGEMENT</td>
+      <td>1111.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>THE FACING HISTORY SCHOOL</td>
+      <td>1051.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>THE URBAN ASSEMBLY ACADEMY OF GOVERNMENT AND LAW</td>
+      <td>1148.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>LOWER MANHATTAN ARTS ACADEMY</td>
+      <td>1200.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>THE JAMES BALDWIN SCHOOL: A SCHOOL FOR EXPEDITIO</td>
+      <td>1188.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THE URBAN ASSEMBLY SCHOOL OF BUSINESS FOR YOUNG</td>
+      <td>1127.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>GRAMERCY ARTS HIGH SCHOOL</td>
+      <td>1176.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>EMMA LAZARUS HIGH SCHOOL</td>
+      <td>1188.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>LANDMARK HIGH SCHOOL</td>
+      <td>1170.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>LEGACY SCHOOL FOR INTEGRATED STUDIES</td>
+      <td>1062.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>BAYARD RUSTIN EDUCATIONAL COMPLEX</td>
+      <td>1111.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>VANGUARD HIGH SCHOOL</td>
+      <td>1199.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>UNITY CENTER FOR URBAN TECHNOLOGIES</td>
+      <td>1070.0</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>NEW DESIGN HIGH SCHOOL</td>
+      <td>1168.0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>INDEPENDENCE HIGH SCHOOL</td>
+      <td>1095.0</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>LIBERTY HIGH SCHOOL ACADEMY FOR NEWCOMERS</td>
+      <td>1156.0</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>SATELLITE ACADEMY HIGH SCHOOL</td>
+      <td>1032.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>  
+
+After spending some time on Google to understand what is common between these schools, I have realized that most of these are schools where the minority enrollment and % of economically disadvantaged students is high.
+So its not actually low enrollment causing low sat scores but high % of minority students
+
+
+```python
+full.plot.scatter(x='frl_percent', y='sat_score')
+```  
+
+![SAT Score vs FRL Percent](/assets/img/output_84_1.png)
+
+
+As expected, there is a negative correlation between FRL percent (indicative of % of minority & economically disadvantaged class) and sat scores.
+Higher the % of FRL in the school, lower is the sat score
+
+
+```python
+full.plot.scatter(x='ell_percent', y='sat_score')
+```  
+
+![SAT Score vs ELL Percent](/assets/img/output_86_1.png)
+
+
+It looks like there are a group of schools with a high ell_percentage that also have low average SAT scores. We can investigate this at the district level, by figuring out the percentage of English language learners in each district, and seeing it if matches our map of SAT scores by district:
+
+
+```python
+show_district_map('ell_percent',districts_geojson)
+```  
+
+<div class="map-container">
+    <iframe src="/assets/img/districts.html" height="400" width="500" frameborder="0">
+    </iframe>
+</div>  
+
+
+The distinction here is not very clear, probably due to the color palette chosen. We can for sure see that there is small district right in the middle which has very high ell_percent but not high sat scores.
+
+### Checking the correlation between survey responses and SAT Scores
+
+
+```python
+full.corr()["sat_score"][["rr_s", "rr_t", "rr_p", "N_s", "N_t", "N_p", "saf_tot_11", "com_tot_11", "aca_tot_11", "eng_tot_11"]].plot.bar()
+```  
+
+![SAT Score Correlation with Survey Responses](output_91_1.png)
+
+
+The only factors having a significant correlation with sat scores here are number of parents, students, and teachers responding to the survey, and the % of students responding to the survey. As these also correlate highly with total enrollment, it makes sense to say that schools with low frl percent, also have high survey response rates (that is not our concern at the moment though)
+
+### Exploring relationship between race and SAT scores
+
+
+```python
+full.corr()["sat_score"][["white_per", "asian_per", "black_per", "hispanic_per"]].plot.bar()
+```  
+
+![SAT Score correlation with Race](output_94_1.png)  
+
+From above we can conclude that higher percentage of white and asian students lead to higher sat scores and the inverse holds true for black and hispanic students. It is likely that black and hispanic students are migrants who are also learning english language and are from economically disadvantaged community
+Let's look at which schools have high white_per
+
+
+```python
+full.plot.scatter(x='hispanic_per',y='sat_score')
+```  
+
+![SAT Score vs Hispanic Percentage](output_96_1.png)
+
+
+```python
+full.loc[(full['hispanic_per']<40)&(full['sat_score']>1400),['school_name','sat_score']]
+```  
+
+<div class="table-container">
+<table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>school_name</th>
+      <th>sat_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>NEW EXPLORATIONS INTO SCIENCE  TECHNO</td>
+      <td>1621.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BARD HIGH SCHOOL EARLY COLLEGE</td>
+      <td>1856.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>INSTITUTE FOR COLLABORATIVE EDUCATION</td>
+      <td>1424.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>PROFESSIONAL PERFORMING ARTS HIGH SCH</td>
+      <td>1522.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>BARUCH COLLEGE CAMPUS HIGH SCHOOL</td>
+      <td>1577.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>N.Y.C. LAB SCHOOL FOR COLLABORATIVE S</td>
+      <td>1677.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>SCHOOL OF THE FUTURE HIGH SCHOOL</td>
+      <td>1565.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>N.Y.C. MUSEUM SCHOOL</td>
+      <td>1419.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>ELEANOR ROOSEVELT HIGH SCHOOL</td>
+      <td>1758.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>MILLENNIUM HIGH SCHOOL</td>
+      <td>1614.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>STUYVESANT HIGH SCHOOL</td>
+      <td>2096.0</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>TALENT UNLIMITED HIGH SCHOOL</td>
+      <td>1416.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>HIGH SCHOOL FOR DUAL LANGUAGE AND ASI</td>
+      <td>1424.0</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>HIGH SCHOOL M560 - CITY AS SCHOOL</td>
+      <td>1415.0</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>URBAN ACADEMY LABORATORY HIGH SCHOOL</td>
+      <td>1547.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
+
+
+These schools rank high in charts and host admission test and screening before admission, which is probably why hispanic_per ther is lower than others
+
+### Gender differences in SAT scores
+
+
+```python
+full.corr()["sat_score"][["male_per", "female_per"]].plot.bar()
+```  
+
+![SAT Score Correlation with Gender](output_100_1.png)
+
+
+### AP test scores & SAT scores
+
+One last angle that we would be exploring here is the Advance Placement test and how it affects SAT scores. We already saw that number of AP test takers correlates strongly with SAT scores
+
+
+```python
+full['ap_per'] = full['ap_test_takers_']/full['total_enrollment']
+full.plot.scatter(x='ap_per',y='sat_score')
+```  
+
+![SAT Score vs Advance Placement Percentage](output_103_1.png)
+
+
+Let's try pulling some names from the cluster in top right (excluding outliers) where sat_scores are high
+
+
+```python
+full.loc[(full['ap_per']>0.3)&(full['sat_score']>1400),['school_name','sat_score']]
+```  
+
+<div class="table-container">
+<table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>school_name</th>
+      <th>sat_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>30</th>
+      <td>ELEANOR ROOSEVELT HIGH SCHOOL</td>
+      <td>1758.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>STUYVESANT HIGH SCHOOL</td>
+      <td>2096.0</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>URBAN ACADEMY LABORATORY HIGH SCHOOL</td>
+      <td>1547.0</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>FIORELLO H. LAGUARDIA HIGH SCHOOL OF</td>
+      <td>1707.0</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>MANHATTAN CENTER FOR SCIENCE AND MATH</td>
+      <td>1430.0</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>NaN</td>
+      <td>1969.0</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>NaN</td>
+      <td>1920.0</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>NaN</td>
+      <td>1833.0</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>NaN</td>
+      <td>1436.0</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>NaN</td>
+      <td>1431.0</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>NaN</td>
+      <td>1473.0</td>
+    </tr>
+    <tr>
+      <th>323</th>
+      <td>NaN</td>
+      <td>1627.0</td>
+    </tr>
+    <tr>
+      <th>351</th>
+      <td>NaN</td>
+      <td>1910.0</td>
+    </tr>
+    <tr>
+      <th>355</th>
+      <td>NaN</td>
+      <td>1514.0</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>NaN</td>
+      <td>1474.0</td>
+    </tr>
+    <tr>
+      <th>358</th>
+      <td>NaN</td>
+      <td>1449.0</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>NaN</td>
+      <td>1407.0</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>NaN</td>
+      <td>1868.0</td>
+    </tr>
+    <tr>
+      <th>405</th>
+      <td>NaN</td>
+      <td>1418.0</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>NaN</td>
+      <td>1953.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>  
+
+Some Google searching reveals that these are mostly highly selective schools where you need to take a test to get in. It makes sense that these schools would have high proportions of AP test takers.
+
+# THE END!
+
+This is all that we are going to cover as part of this project. I would like to thank [DataQuest.io](www.dataquest.io) for guiding me through the project.
