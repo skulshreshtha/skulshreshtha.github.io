@@ -66,7 +66,7 @@ Having the data in place, its always good to check samples for each data set to 
 sat_results.head()
 ```
 
-<div> style="height:400;width:600"
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -80,7 +80,7 @@ sat_results.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe" height="400px" width="500px">
   <thead>
     <tr style="text-align: right;">
       <th></th>
