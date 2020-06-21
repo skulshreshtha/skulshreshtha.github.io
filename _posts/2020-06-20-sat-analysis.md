@@ -64,7 +64,7 @@ Having the data in place, its always good to check samples for each data set to 
 ```python
 #Browsing the datasets one by one
 sat_results.head()
-```
+```  
 
 <div class="table-container">
 <table>
