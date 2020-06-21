@@ -3285,4 +3285,7 @@ schools_map.save('schools.html')
 schools_map
 ```
 
-![schools_map](/assets/img/schools.html)
+<div class="video-container">
+    <iframe src="/assets/img/schools.html" height="315" width="560" frameborder="0">
+    </iframe>
+</div>
