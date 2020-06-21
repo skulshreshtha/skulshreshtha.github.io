@@ -12,7 +12,7 @@ This project utilizes different datasets taken from the [NYC OpenData initiative
 
 1. Are schools differentiated by SAT scores?
 2. The schools which are doing best and the ones which are doing worse, what are the key differentiating factors between these schools?
-3. Do demographics really play a role in SAT scores? If yes, then how and which demographic categories are doing better than others
+3. Do demographics really play a role in SAT scores? If yes, then how and which demographic categories are doing better than others  
 
 ### Step - 1: Data pull and cleaning
 
@@ -66,10 +66,8 @@ Having the data in place, its always good to check samples for each data set to 
 sat_results.head()
 ```
 
-
-
-
 <div>
+height = '400' width = '600
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3285,7 +3283,7 @@ schools_map.save('schools.html')
 schools_map
 ```
 
-<div class="video-container">
-    <iframe src="/assets/img/schools.html" height="315" width="560" frameborder="0">
+<div class="map-container">
+    <iframe src="/assets/img/schools.html" height="600" width="800" frameborder="0">
     </iframe>
 </div>
