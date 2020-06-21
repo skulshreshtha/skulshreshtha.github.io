@@ -66,8 +66,7 @@ Having the data in place, its always good to check samples for each data set to 
 sat_results.head()
 ```
 
-<div>
-height = '400' width = '600
+<div> style="height:400;width:600"
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
