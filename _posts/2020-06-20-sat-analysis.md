@@ -3,7 +3,10 @@ layout: post
 title: Assessing SAT Scores for New York Schools
 subtitle: Exploratory data analysis of SAT scores across high schools
 cover-img: /assets/img/sat-img.jpg
+gh-repo: skulshreshtha/SAT-analysis
+gh-badge: [star, fork, follow]
 tags: [SAT, exam, EDA]
+comments: true
 ---
 
 The **SAT (Scholastic Aptitude Test)** is a standardized test widely used for college admissions in the United States. The test is divided into 3 sections, each of which has a total score of 800. High schools are often ranked by their average SAT scores, and high SAT scores are considered a sign of how good a school district is.
