@@ -5,7 +5,7 @@ subtitle: A simple spam predictor app built using Python and Flask
 cover-img: /assets/img/spam-img.jpg
 gh-repo: skulshreshtha/Spam-Detector-App
 gh-badge: [star, fork, follow]
-tags: [Spam-Detection, Machine-Learning, Flask, Python, NLP]
+tags: [SpamDetection, MachineLearning, Flask, Python, NLP]
 comments: true
 ---
 
@@ -40,7 +40,7 @@ sms.head()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -91,7 +91,7 @@ sms.describe()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -152,7 +152,7 @@ sms.head()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -210,7 +210,7 @@ sms.head()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -288,7 +288,7 @@ sms[sms.label=='ham'].describe()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -352,7 +352,7 @@ sms[sms.label=='spam'].describe()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -452,7 +452,7 @@ sms.head()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -587,7 +587,7 @@ sms.head()
 
 
 <div class="table-container">
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
