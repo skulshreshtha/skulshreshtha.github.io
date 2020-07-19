@@ -39,20 +39,7 @@ sms.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -103,20 +90,7 @@ sms.describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -177,20 +151,7 @@ sms.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -248,20 +209,7 @@ sms.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -347,20 +295,7 @@ sms[sms.label=='ham'].describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -424,20 +359,7 @@ sms[sms.label=='spam'].describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -537,20 +459,7 @@ sms.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -685,20 +594,7 @@ sms.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+<div class="table-container">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1032,4 +928,4 @@ This is how we use if-else in HTML to render two different results.
 
 ![that_was_it](/assets/img/done_spam.gif)
 
-Viola! We have completed building a basic spam classifier and deploying it in a web based app.
+#### Viola! We have completed building a basic spam classifier and deploying it in a web based app.
