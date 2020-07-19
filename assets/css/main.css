@@ -29,6 +29,8 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
   line-height: 1.1;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 h1 {
   font-size: 2.25rem;
@@ -768,6 +770,9 @@ footer .footer-custom-content {
 
 table {
   padding: 0;
+  width: -webkit-fill-available;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 table tr {
   border-top: 1px solid #cccccc;
@@ -917,7 +922,7 @@ pre {
 }
 
 /* Shobhit's added custom CSS */
-
+/*
 .table-container {
   height: 500px;
   width: 700px;
@@ -925,10 +930,17 @@ pre {
   margin-bottom: 20px;
   overflow: scroll;
 }
+*/
 
 .map-container {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+
+.language-python.highlighter-rouge {
+	margin-block-end: 1em;
+	margin-block-start: 1em;
 }
 
 
