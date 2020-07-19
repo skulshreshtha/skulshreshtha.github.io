@@ -38,7 +38,7 @@ sms.head()
 ```  
 
 
-<table style="width:50%;">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -81,7 +81,6 @@ Let's explore the dataset to gather an understanding of what makes a message spa
 sms.describe()
 ```
 
-<div class="table-container">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -113,7 +112,6 @@ sms.describe()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -142,7 +140,6 @@ sms.head()
 
 
 
-<div class="table-container">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -185,7 +182,6 @@ sms.head()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -200,7 +196,7 @@ sms.head()
 
 
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -249,7 +245,6 @@ sms.head()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -278,7 +273,7 @@ sms[sms.label=='ham'].describe()
 
 
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -330,7 +325,6 @@ sms[sms.label=='ham'].describe()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -342,7 +336,7 @@ sms[sms.label=='spam'].describe()
 
 
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -394,7 +388,6 @@ sms[sms.label=='spam'].describe()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -442,7 +435,7 @@ sms.head()
 
 
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -497,7 +490,6 @@ sms.head()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -577,7 +569,7 @@ sms.head()
 
 
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -638,7 +630,6 @@ sms.head()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -783,7 +774,7 @@ For this basic app, we have created just two pages, where one allows you to ente
 
 This is how the home page looks when you run the app
 
-![home_page_image](/assets/img/spam-detection/home_page_img.jpeg)
+![home_page_image](/assets/img/spam-detection/home_page_img.jpg)
 
 If you are familiar with HTML, you must have guessed that the major components here are:
 1. /*Input Form*/ - Allowing user to enter custom message
@@ -791,7 +782,7 @@ If you are familiar with HTML, you must have guessed that the major components h
 
 This is what the code for these components in the file `home.html` looks like:
 
-![home_page_code](/assets/img/spam-detection/spam_home_html.jpeg)
+![home_page_code](/assets/img/spam-detection/spam_home_html.jpg)
 
 In the form action above, we use the url_for decorator to generate a POST request url for "Predict", which is then captured by the app.route we defined in Flask server to perform the next step
 
@@ -799,7 +790,7 @@ In the form action above, we use the url_for decorator to generate a POST reques
 
 This is how the results page looks when you push the 'predict' button
 
-![results_page_image](/assets/img/spam-detection/results_page_img.jpeg)
+![results_page_image](/assets/img/spam-detection/results_page_img.jpg)
 
 For this page, we need a binary classification output (0/1) coming from the server-side created by predicting custom message class using the already trained model. To do this, we first copy the code required for reading in the training data and fitting our model from our Jupyter notebook into the script `app.py`. This is how the script looks after pasting
 
@@ -884,7 +875,7 @@ In addition to pasting the model code from Jupyter, we have also added an `app.r
 
 Let's take a look at the logic in `result.html` file
 
-![results_page_code](/assets/img/spam-detection/spam_result_html.jpeg)
+![results_page_code](/assets/img/spam-detection/spam_result_html.jpg)
 
 This is how we use if-else in HTML to render two different results.
 

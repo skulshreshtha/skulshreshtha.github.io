@@ -70,7 +70,6 @@ Having the data in place, its always good to check samples for each data set to 
 sat_results.head()
 ```  
 
-<div class="table-container">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -131,7 +130,7 @@ sat_results.head()
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -140,7 +139,7 @@ sat_results.head()
 enrollment.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -183,13 +182,13 @@ enrollment.head()
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 ```python
 high_schools.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -341,13 +340,12 @@ high_schools.head()
   </tbody>
 </table>
 <p>5 rows × 69 columns</p>
-</div>  
 
 ```python
 class_size.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -468,13 +466,13 @@ class_size.head()
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 ```python
 ap2010.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -529,13 +527,13 @@ ap2010.head()
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 ```python
 graduation.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -687,13 +685,12 @@ graduation.head()
   </tbody>
 </table>
 <p>5 rows × 23 columns</p>
-</div>  
 
 ```python
 demographics.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -845,13 +842,13 @@ demographics.head()
   </tbody>
 </table>
 <p>5 rows × 38 columns</p>
-</div>  
+
 
 ```python
 math_results.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -972,13 +969,13 @@ math_results.head()
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 ```python
 survey_1.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -1129,14 +1126,13 @@ survey_1.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 1942 columns</p>
-</div>  
+<p>5 rows × 1942 columns</p>  
 
 ```python
 survey_2.head()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -1287,8 +1283,7 @@ survey_2.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 1773 columns</p>
-</div>  
+<p>5 rows × 1773 columns</p>  
 
 **Things we can start noticing from previews:**
 1. DBN is one common field that is present in majority of the datasets. We can combine these datasets on DBN
@@ -1342,7 +1337,7 @@ array(['0K', '01', '02', '03', '04', '05', '0K-09', nan, '06', '07', '08',
 class_size[class_size['grade_']=='09-12'].groupby('program_type').count()
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -1444,7 +1439,7 @@ class_size[class_size['grade_']=='09-12'].groupby('program_type').count()
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 ```python
 class_size = class_size[class_size["grade_"] == "09-12"]
@@ -2156,7 +2151,7 @@ Hmm, There is not exactly a correlation here. Its just that there is a cluster o
 full.loc[(full['total_enrollment']<500)&(full['sat_score']<=1200),['name','sat_score']]
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -2283,7 +2278,7 @@ full.loc[(full['total_enrollment']<500)&(full['sat_score']<=1200),['name','sat_s
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 After spending some time on Google to understand what is common between these schools, I have realized that most of these are schools where the minority enrollment and % of economically disadvantaged students is high.
 So its not actually low enrollment causing low sat scores but high % of minority students
@@ -2358,7 +2353,7 @@ full.plot.scatter(x='hispanic_per',y='sat_score')
 full.loc[(full['hispanic_per']<40)&(full['sat_score']>1400),['school_name','sat_score']]
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -2445,7 +2440,7 @@ full.loc[(full['hispanic_per']<40)&(full['sat_score']>1400),['school_name','sat_
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -2481,7 +2476,7 @@ Let's try pulling some names from the cluster in top right (excluding outliers) 
 full.loc[(full['ap_per']>0.3)&(full['sat_score']>1400),['school_name','sat_score']]
 ```  
 
-<div class="table-container">
+
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -2593,7 +2588,7 @@ full.loc[(full['ap_per']>0.3)&(full['sat_score']>1400),['school_name','sat_score
     </tr>
   </tbody>
 </table>
-</div>  
+  
 
 Some Google searching reveals that these are mostly highly selective schools where you need to take a test to get in. It makes sense that these schools would have high proportions of AP test takers.
 

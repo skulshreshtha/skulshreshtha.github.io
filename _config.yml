@@ -30,6 +30,7 @@ round-avatar: true
 # then specify the following parameter
 title-img: /assets/img/logo_sk.png
 
+# To enable future dated posts
 future: true
 
 
