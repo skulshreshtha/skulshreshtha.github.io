@@ -13,8 +13,8 @@ comments: true
 
 This project utilizes the SMS dataset taken from the [SMS Spam Collection Dataset](https://www.kaggle.com/uciml/sms-spam-collection-dataset). For this project, I  am starting with a Jupyter Notebook as it eases the data cleansing, model training & testing pipeline workload by not requiring you to re-run the entire script every time. Once we have settled on a model configuration, we can create separate scripts for deploying it in Flask.
 
-### Importing the basic necessities
-Let's import the basic libraries for data analysis
+### Importing the basic necessities  
+
 ```python
 import pandas as pd
 import numpy as np
@@ -25,8 +25,9 @@ import seaborn as sns
 sns.set_style("whitegrid")
 ```
 
-### Reading the dataset
-Reading in the data set and renaming the columns
+### Reading the dataset  
+
+
 ```python
 sms = pd.read_csv("spam.csv",encoding='latin-1')
 sms.columns = ['label', 'message']
