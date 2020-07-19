@@ -15,6 +15,7 @@ This project utilizes the SMS dataset taken from the [SMS Spam Collection Datase
 
 ### Importing the basic necessities  
 
+
 ```python
 import pandas as pd
 import numpy as np
@@ -23,7 +24,8 @@ import seaborn as sns
 
 %matplotlib inline
 sns.set_style("whitegrid")
-```
+```  
+
 
 ### Reading the dataset  
 
@@ -33,7 +35,9 @@ sms = pd.read_csv("spam.csv",encoding='latin-1')
 sms.columns = ['label', 'message']
 
 sms.head()
-```
+```  
+
+
 <table style="width:50%;">
   <thead>
     <tr style="text-align: right;">
