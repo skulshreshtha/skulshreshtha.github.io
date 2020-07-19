@@ -2,7 +2,7 @@
 layout: post
 title: Building a basic spam detector web app
 subtitle: A simple spam predictor app built using Python and Flask
-cover-img: /assets/img/spam-detection/spam-img.jpeg
+cover-img: /assets/img/spam-detection/spam-img.jpg
 gh-repo: skulshreshtha/Spam-Detector-App
 gh-badge: [star, fork, follow]
 tags: [SpamDetection, MachineLearning, Flask, Python, NLP]
@@ -14,6 +14,7 @@ comments: true
 This project utilizes the SMS dataset taken from the [SMS Spam Collection Dataset](https://www.kaggle.com/uciml/sms-spam-collection-dataset). For this project, I  am starting with a Jupyter Notebook as it eases the data cleansing, model training & testing pipeline workload by not requiring you to re-run the entire script every time. Once we have settled on a model configuration, we can create separate scripts for deploying it in Flask.
 
 ### Importing the basic necessities
+Let's import the basic libraries for data analysis
 ```python
 import pandas as pd
 import numpy as np
@@ -25,20 +26,14 @@ sns.set_style("whitegrid")
 ```
 
 ### Reading the dataset
-
-
+Reading in the data set and renaming the columns
 ```python
 sms = pd.read_csv("spam.csv",encoding='latin-1')
 sms.columns = ['label', 'message']
 
 sms.head()
 ```
-
-
-
-
-<div>
-<table>
+<table style="width:50%;">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -74,19 +69,12 @@ sms.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
 
 ### Exploratory Data Analysis
-
-
+Let's explore the dataset to gather an understanding of what makes a message spam or ham
 ```python
 sms.describe()
 ```
-
-
-
 
 <div class="table-container">
 <table>
