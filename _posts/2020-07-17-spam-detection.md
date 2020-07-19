@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Building spam detector app using Flask
+title: Building a basic spam detector web app
 subtitle: A simple spam predictor app built using Python and Flask
-cover-img: /assets/img/spam-img.jpg
+cover-img: /assets/img/spam-detection/spam-img.jpeg
 gh-repo: skulshreshtha/Spam-Detector-App
 gh-badge: [star, fork, follow]
 tags: [SpamDetection, MachineLearning, Flask, Python, NLP]
@@ -13,8 +13,7 @@ comments: true
 
 This project utilizes the SMS dataset taken from the [SMS Spam Collection Dataset](https://www.kaggle.com/uciml/sms-spam-collection-dataset). For this project, I  am starting with a Jupyter Notebook as it eases the data cleansing, model training & testing pipeline workload by not requiring you to re-run the entire script every time. Once we have settled on a model configuration, we can create separate scripts for deploying it in Flask.
 
-### Importing the basic necessities
-
+### Importing the basic necessities  
 
 ```python
 import pandas as pd
@@ -39,7 +38,7 @@ sms.head()
 
 
 
-<div class="table-container">
+<div>
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -274,7 +273,7 @@ plt.legend()
 plt.xlabel("Message Length")
 ```
 
-![png](/assets/img/spam_output_11_1.png)
+![png](/assets/img/spam-detection/spam_output_11_1.png)
 
 
 It appears that spam messages are usually longer than ham messages. Let's check out each category separately to get a numeric view on this
@@ -754,7 +753,7 @@ If you do not have it installed, you will first need to install flask, which you
 
 Flask requires you to have a basic folder structure setup in your project folder, similar to this screenshot here.
 
-![folder_structure_sample](/assets/img/folder_structure.jpg)
+![folder_structure_sample](/assets/img/spam-detection/folder_structure.jpeg)
 
 The essential thing to note is having a folder titled `static` which holds the css styling file and any kind of static content to be used on your web-app like photos, videos, etc.
 Another folder that you need to have is `templates` which would house the html templates for rendering the different pages on your web-app.
@@ -792,7 +791,7 @@ For this basic app, we have created just two pages, where one allows you to ente
 
 This is how the home page looks when you run the app
 
-![home_page_image](/assets/img/home_page_img.jpg)
+![home_page_image](/assets/img/spam-detection/home_page_img.jpeg)
 
 If you are familiar with HTML, you must have guessed that the major components here are:
 1. /*Input Form*/ - Allowing user to enter custom message
@@ -800,13 +799,15 @@ If you are familiar with HTML, you must have guessed that the major components h
 
 This is what the code for these components in the file `home.html` looks like:
 
+![home_page_code](/assets/img/spam-detection/spam_home_html.jpeg)
+
 In the form action above, we use the url_for decorator to generate a POST request url for "Predict", which is then captured by the app.route we defined in Flask server to perform the next step
 
 #### Results Page
 
 This is how the results page looks when you push the 'predict' button
 
-![results_page_image](/assets/img/results_page_img.jpg)
+![results_page_image](/assets/img/spam-detection/results_page_img.jpeg)
 
 For this page, we need a binary classification output (0/1) coming from the server-side created by predicting custom message class using the already trained model. To do this, we first copy the code required for reading in the training data and fitting our model from our Jupyter notebook into the script `app.py`. This is how the script looks after pasting
 
@@ -891,8 +892,10 @@ In addition to pasting the model code from Jupyter, we have also added an `app.r
 
 Let's take a look at the logic in `result.html` file
 
+![results_page_code](/assets/img/spam-detection/spam_result_html.jpeg)
+
 This is how we use if-else in HTML to render two different results.
 
-![that_was_it](/assets/img/done_spam.gif)
+![that_was_it](/assets/img/spam-detection/done_spam.gif)
 
-#### Viola! We have completed building a basic spam classifier and deploying it in a web based app.
+### Viola! We have completed building a basic spam classifier and deploying it in a web based app.

@@ -2,7 +2,7 @@
 layout: post
 title: Assessing SAT Scores for New York Schools
 subtitle: Exploratory data analysis of SAT scores across high schools
-cover-img: /assets/img/sat-img.jpg
+cover-img: /assets/img/sat-analysis/sat-img.jpg
 gh-repo: skulshreshtha/SAT-analysis
 gh-badge: [star, fork, follow]
 tags: [SAT, exam, EDA]
@@ -2091,7 +2091,7 @@ schools_map
 ```
 
 <div class="map-container">
-    <iframe src="/assets/img/schools.html" height="400" width="700" frameborder="0">
+    <iframe src="/assets/img/sat-analysis/schools.html" height="400" width="700" frameborder="0">
     </iframe>
 </div>  
 
@@ -2105,7 +2105,7 @@ schools_heatmap
 ```
 
 <div class="map-container">
-    <iframe src="/assets/img/heatmap.html" height="400" width="700" frameborder="0">
+    <iframe src="/assets/img/sat-analysis/heatmap.html" height="400" width="700" frameborder="0">
     </iframe>
 </div>  
 
@@ -2137,7 +2137,7 @@ show_district_map("sat_score",districts_geojson)
 ```  
 
 <div class="map-container">
-    <iframe src="/assets/img/districts_sat.html" height="400" width="700" frameborder="0">
+    <iframe src="/assets/img/sat-analysis/districts_sat.html" height="400" width="700" frameborder="0">
     </iframe>
 </div>  
 
@@ -2148,7 +2148,7 @@ This looks great! Now that we have developed a basic understanding of the datase
 full.plot.scatter(x='total_enrollment', y='sat_score')
 ```  
 
-![SAT Score vs Total Enrollment](/assets/img/output_80_1.png)  
+![SAT Score vs Total Enrollment](/assets/img/sat-analysis/output_80_1.png)  
 
 Hmm, There is not exactly a correlation here. Its just that there is a cluster of schools with low enrollment and low sat scores. Let's try pulling up some names.  
 
@@ -2293,7 +2293,7 @@ So its not actually low enrollment causing low sat scores but high % of minority
 full.plot.scatter(x='frl_percent', y='sat_score')
 ```  
 
-![SAT Score vs FRL Percent](/assets/img/output_84_1.png)
+![SAT Score vs FRL Percent](/assets/img/sat-analysis/output_84_1.png)
 
 
 As expected, there is a negative correlation between FRL percent (indicative of % of minority & economically disadvantaged class) and sat scores.
@@ -2304,7 +2304,7 @@ Higher the % of FRL in the school, lower is the sat score
 full.plot.scatter(x='ell_percent', y='sat_score')
 ```  
 
-![SAT Score vs ELL Percent](/assets/img/output_86_1.png)
+![SAT Score vs ELL Percent](/assets/img/sat-analysis/output_86_1.png)
 
 
 It looks like there are a group of schools with a high ell_percentage that also have low average SAT scores. We can investigate this at the district level, by figuring out the percentage of English language learners in each district, and seeing it if matches our map of SAT scores by district:
@@ -2315,7 +2315,7 @@ show_district_map('ell_percent',districts_geojson)
 ```  
 
 <div class="map-container">
-    <iframe src="/assets/img/districts.html" height="400" width="700" frameborder="0">
+    <iframe src="/assets/img/sat-analysis/districts.html" height="400" width="700" frameborder="0">
     </iframe>
 </div>  
 
@@ -2329,7 +2329,7 @@ The distinction here is not very clear, probably due to the color palette chosen
 full.corr()["sat_score"][["rr_s", "rr_t", "rr_p", "N_s", "N_t", "N_p", "saf_tot_11", "com_tot_11", "aca_tot_11", "eng_tot_11"]].plot.bar()
 ```  
 
-![SAT Score Correlation with Survey Responses](/assets/img/output_91_1.png)
+![SAT Score Correlation with Survey Responses](/assets/img/sat-analysis/output_91_1.png)
 
 
 The only factors having a significant correlation with sat scores here are number of parents, students, and teachers responding to the survey, and the % of students responding to the survey. As these also correlate highly with total enrollment, it makes sense to say that schools with low frl percent, also have high survey response rates (that is not our concern at the moment though)
@@ -2341,7 +2341,7 @@ The only factors having a significant correlation with sat scores here are numbe
 full.corr()["sat_score"][["white_per", "asian_per", "black_per", "hispanic_per"]].plot.bar()
 ```  
 
-![SAT Score correlation with Race](/assets/img/output_94_1.png)  
+![SAT Score correlation with Race](/assets/img/sat-analysis/output_94_1.png)  
 
 From above we can conclude that higher percentage of white and asian students lead to higher sat scores and the inverse holds true for black and hispanic students. It is likely that black and hispanic students are migrants who are also learning english language and are from economically disadvantaged community
 Let's look at which schools have high white_per
@@ -2351,7 +2351,7 @@ Let's look at which schools have high white_per
 full.plot.scatter(x='hispanic_per',y='sat_score')
 ```  
 
-![SAT Score vs Hispanic Percentage](/assets/img/output_96_1.png)
+![SAT Score vs Hispanic Percentage](/assets/img/sat-analysis/output_96_1.png)
 
 
 ```python
@@ -2458,7 +2458,7 @@ These schools rank high in charts and host admission test and screening before a
 full.corr()["sat_score"][["male_per", "female_per"]].plot.bar()
 ```  
 
-![SAT Score Correlation with Gender](/assets/img/output_100_1.png)
+![SAT Score Correlation with Gender](/assets/img/sat-analysis/output_100_1.png)
 
 
 ### AP test scores & SAT scores
@@ -2471,7 +2471,7 @@ full['ap_per'] = full['ap_test_takers_']/full['total_enrollment']
 full.plot.scatter(x='ap_per',y='sat_score')
 ```  
 
-![SAT Score vs Advance Placement Percentage](/assets/img/output_103_1.png)
+![SAT Score vs Advance Placement Percentage](/assets/img/sat-analysis/output_103_1.png)
 
 
 Let's try pulling some names from the cluster in top right (excluding outliers) where sat_scores are high
