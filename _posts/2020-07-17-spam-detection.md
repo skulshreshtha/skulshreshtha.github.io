@@ -800,21 +800,6 @@ If you are familiar with HTML, you must have guessed that the major components h
 
 This is what the code for these components in the file `home.html` looks like:
 
-```
-<div class="ml-container">
-
-	<form action="{{ url_for('Predict')}}" method="POST">
-		<p>Enter Your Message Here</p>
-		<!-- <input type="text" name="comment"/> -->
-		<textarea name="message" rows="4" cols="50"></textarea>
-		<br/>
-
-		<input type="submit" class="btn-info" value="Predict">
-		
-	</form>
-		
-</div>
-```
 In the form action above, we use the url_for decorator to generate a POST request url for "Predict", which is then captured by the app.route we defined in Flask server to perform the next step
 
 #### Results Page
@@ -905,16 +890,6 @@ app.run(debug=True)
 In addition to pasting the model code from Jupyter, we have also added an `app.route('/Predict',methods=['POST'])` which captures POST request generated on pressing the 'Predict' button on home page. Followed by that, we define the function for "Predict", which basically just reads in the custom message entered by user, runs the predict function on it and returns our rendered HTML page `result.html`. If you observe, this time we have also passed a parameter `prediction` to the render_template function. This parameter contains the binary classification result (0/1) for the custom message. Our HTML script `result.html` will take this as input and apply a logic to display the right result.
 
 Let's take a look at the logic in `result.html` file
-
-```
-{% if prediction == 1%}
-<img src="../static/spam.jpg" alt="Spam alert" class="center">
-<h2 style="color:red;">Your message is potentially Spam!</h2>
-{% elif prediction == 0%}
-<img src='../static/ham.jpg' alt='ham cartoon image' class="center">
-<h2 style="color:green;">Not a Spam (It is a Ham)</h2>
-{% endif %}
-```
 
 This is how we use if-else in HTML to render two different results.
 
