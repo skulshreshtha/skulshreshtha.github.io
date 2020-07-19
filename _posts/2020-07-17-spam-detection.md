@@ -13,8 +13,7 @@ comments: true
 
 This project utilizes the SMS dataset taken from the [SMS Spam Collection Dataset](https://www.kaggle.com/uciml/sms-spam-collection-dataset). For this project, I  am starting with a Jupyter Notebook as it eases the data cleansing, model training & testing pipeline workload by not requiring you to re-run the entire script every time. Once we have settled on a model configuration, we can create separate scripts for deploying it in Flask.
 
-### Importing the basic necessities  
-
+### Importing the basic necessities
 ```python
 import pandas as pd
 import numpy as np
