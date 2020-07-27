@@ -736,7 +736,7 @@ If you do not have it installed, you will first need to install flask, which you
 
 Flask requires you to have a basic folder structure setup in your project folder, similar to this screenshot here.
 
-![folder_structure_sample](/assets/img/spam-detection/folder_structure.jpeg)
+![folder_structure_sample](/assets/img/spam-detection/folder_structure.JPG)
 
 The essential thing to note is having a folder titled `static` which holds the css styling file and any kind of static content to be used on your web-app like photos, videos, etc.
 Another folder that you need to have is `templates` which would house the html templates for rendering the different pages on your web-app.
@@ -774,7 +774,7 @@ For this basic app, we have created just two pages, where one allows you to ente
 
 This is how the home page looks when you run the app
 
-![home_page_image](/assets/img/spam-detection/home_page_img.jpg)
+![home_page_image](/assets/img/spam-detection/home_page_img.JPG)
 
 If you are familiar with HTML, you must have guessed that the major components here are:
 1. /*Input Form*/ - Allowing user to enter custom message
@@ -782,7 +782,7 @@ If you are familiar with HTML, you must have guessed that the major components h
 
 This is what the code for these components in the file `home.html` looks like:
 
-![home_page_code](/assets/img/spam-detection/spam_home_html.jpg)
+![home_page_code](/assets/img/spam-detection/spam_home_html.JPG)
 
 In the form action above, we use the url_for decorator to generate a POST request url for "Predict", which is then captured by the app.route we defined in Flask server to perform the next step
 
@@ -790,7 +790,7 @@ In the form action above, we use the url_for decorator to generate a POST reques
 
 This is how the results page looks when you push the 'predict' button
 
-![results_page_image](/assets/img/spam-detection/results_page_img.jpg)
+![results_page_image](/assets/img/spam-detection/results_page_img.JPG)
 
 For this page, we need a binary classification output (0/1) coming from the server-side created by predicting custom message class using the already trained model. To do this, we first copy the code required for reading in the training data and fitting our model from our Jupyter notebook into the script `app.py`. This is how the script looks after pasting
 
@@ -875,7 +875,7 @@ In addition to pasting the model code from Jupyter, we have also added an `app.r
 
 Let's take a look at the logic in `result.html` file
 
-![results_page_code](/assets/img/spam-detection/spam_result_html.jpg)
+![results_page_code](/assets/img/spam-detection/spam_result_html.JPG)
 
 This is how we use if-else in HTML to render two different results.
 
