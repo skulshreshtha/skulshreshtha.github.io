@@ -12,8 +12,6 @@ author: Shobhit Kulshreshtha
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Projects: "projects"
-  Skills: "skills"
   Resume: "resume"
   About: "aboutme"
 
