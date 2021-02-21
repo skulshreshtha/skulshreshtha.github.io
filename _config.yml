@@ -12,8 +12,7 @@ author: Shobhit Kulshreshtha
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Resume: "resume"
-  About: "aboutme"
+  About: "about"
 
 # --- Logo --- #
 
