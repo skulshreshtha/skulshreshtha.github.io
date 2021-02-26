@@ -2,14 +2,12 @@
 layout: post
 title: How to Excel at your Spreadsheets(Part 1)
 subtitle: A consultant's reference guide to Microsoft Excel
-cover-img: /assets/img/excel-1/cover-img.jpeg
-thumbnail-img: /assets/img/excel-1/cover-img.jpeg
-share-img: /assets/img/excel-1/cover-img.jpeg
+cover-img: /assets/img/excel-1/cover-img.jpg
+thumbnail-img: /assets/img/excel-1/cover-img.jpg
+share-img: /assets/img/excel-1/cover-img.jpg
 tags: [Excel, Spreadsheet, DataAnalysis, Consulting]
 comments: true
 ---
-
-### Introduction
 
 Microsoft Excel aka Excel, is probably that one tool which is used heavily by everyone in the business world. Of course, there is email, text editors, etc. but I am omitting the basic necessities here. Regardless of the size of a business or the job profile, everyone is using it to some extent.
 
@@ -37,22 +35,29 @@ Excel offers a wide variety of options to fetch the data you need for analysis. 
 
 > Excel uses `Power Query` as the underlying engine when you import data using `Get Data` module. This will allow you to relate that Microsoft PowerBI and Excel are using a common approach to data pull, making your learning curve for PowerBI less steeper
 
-   - **Ability to refresh**: As I just mentioned, it allows single click refresh for your data. Additionally, you can also setup periodic auto-refresh (daily/hourly) or triggered auto-refresh (opening the file/switching to a tab).  ![Query Refresh Menu](/assets/img/excel-1/query_refresh)  To reach the above window, right-click any query & click `Properties`
+   - **Ability to refresh**: As I just mentioned, it allows single click refresh for your data. Additionally, you can also setup periodic auto-refresh (daily/hourly) or triggered auto-refresh (opening the file/switching to a tab
+   
+   ![Query Refresh Menu](/assets/img/excel-1/query_refresh.JPG)
+   
+   To reach the above window, right-click any query & click `Properties`
    
    
    - **Not limited by Excel's sheet size**: This one starts getting significant as you deal with more and more data. Excel worksheet object has a limit of 1048576 (2<sup>10</sup>) rows and 16384 (2<sup>14</sup>) columns. Therefore, you cannot fit data larger than that in a sheet, and you might get clipboard memory challenges while copy-pasting that data as well. However, when you use Power Query you have the option to load data as:
        1. Excel Table - This will paste a table to any selected location in your workbook having all the columns but only showing a fraction of rows
        2. Pivot Table - This will insert a pivot table at any selected location in your worbook which you can use to create summary views/tables from your data
        3. Connection - This only creates a connection to your source data. You can find this connection under `Queries & Connections` section and can even use it to populate table or create a pivot table later
-	   
-	   
+   
    - **Ability to assess data quality**: Everytime we load in a new data source, we start looking for distributions of continuous variables, any missing data in any columns, frequency distributions for categorical variables, etc. Before PowerQuery, all this had to be done manually after loading data in Excel but, now all that can be done by just a few clicks in the PowerQuery Editor window. You can check the distributions, see if any column has missing values, and even fill/remove those rows with missing data.
+   
+   ![Column Profiling](/assets/img/excel-1/column_profiling.JPG)
    
    
    - **Ability to infer & control data-types**: Excel has had a bad reputation for inflicting its own understanding of the data type upon the world. *Jeez, that's just so judgemental!* Jokes apart, this is a serious problem and no organization is immune to it. However, when we are importing data through PowerQuery we can check what data type has PowerQuery inferred and even change that at any point of time. Also, as this is a query pipeline which pulls data, transforms it, and loads it the way you choose, it never impacts the original source file. Therefore, you never compromise the source data & associated formats, which you might have in case you had decided to open that manually in Excel and copy-pasting.
    
    
    - **Ability to add transformations as part of ingestion pipeline**: Imagine a situation where you want to filter the source data, add few calculated columns, aggregate to some extent but without bulking up your Workbook by loading in the data first. Before PowerQuery, Excel could not do this and was at disadvantage with products like Alteryx, Knime, BI tools, which allow users to create data cleansing & transformation workflow. PowerQuery filled that gap for Excel and quite beautifully. You can use the familiar ribbon based UI to perform these transformation operations and see them getting added as sequential steps to your data ingestion pipeline. Once done, you can just click `Load to` and choose the desired way to load the resulting data
+   
+   ![transform tab Power Query](/assets/img/excel-1/power_query_editor.JPG)
    
    
    - **Supports a wide array of data sources**: The source data that we want to analyze might be sitting at different locations (especially in larger organizations). It could be coming from your CRM, ERP, data cubes, data lake, big data warehouse, reporting services, data feeds, or shared storages like cloud/shared directories. Due to this reason, PowerQuery supports many different data source formats. While you might end up using `csv` files as source around 90% of the time, it might help to know what other options are available. Here is a list
